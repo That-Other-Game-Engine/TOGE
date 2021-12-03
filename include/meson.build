@@ -1,0 +1,1 @@
+install_headers('toge.hpp', 'debug.hpp')

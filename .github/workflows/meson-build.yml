@@ -26,14 +26,14 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: update
-        run: apt-get update
+        run: sudo apt-get update
 
       # Runs a single command using the runners shell
       - name: install meson and ninja
-        run: apt-get install meson ninja
+        run: sudo apt-get install meson ninja
         
       - name: install gcc and clang
-        run: apt-get install clang g++ gcc
+        run: sudo apt-get install clang g++ gcc
 
       # Runs a set of commands using the runners shell
       - name: create the build directories

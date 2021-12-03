@@ -30,7 +30,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: install meson and ninja
-        run: sudo apt-get install meson ninja
+        run: sudo apt-get install meson ninja-build
         
       - name: install gcc and clang
         run: sudo apt-get install clang g++ gcc

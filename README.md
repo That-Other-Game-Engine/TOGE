@@ -8,4 +8,5 @@
 
 ## Todo
 Todo:
-- [ ] Push all of the Logging functions into a single polymorphic function
+- [ ] write a wrapper for the library for another language
+    - [ ] Push all of the Logging functions into a single polymorphic function

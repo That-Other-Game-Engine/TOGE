@@ -17,32 +17,44 @@
  */
 
 #include <iostream>
-#include <ctime>
 #include <stdexcept>
 #include <cstring>
+#include <chrono>
+#include <string.h>
 
-extern "C" inline std::string getTime()
+#include <memory>
+
+// extern "C" inline const char * getTime()
+// {
+//     return std::chrono::system_clock::now();
+// }
+
+char* DebugLog(char* msg)
 {
-    time_t now = std::time(0);
-    return std::strtok(std::ctime(&now), "\n");
+    return msg;
 }
 
-std::string DebugLog(std::string msg)
+char * DebugWarn(char * msg)
 {
-    return "[LOG " + getTime() + "] " + msg;
+    // "[WARN " + getTime() + "] " + msg;
+    // char *ret = strcat("[WARN ", getTime());
+    // ret = strcat(ret, "] ");
+    // ret = strcat(ret, msg);
+    // return ret;
+    return msg;
 }
 
-std::string DebugWarn(std::string msg)
+char * DebugError(char *msg)
 {
-    return "[WARN " + getTime() + "] " + msg;
+    // "[ERROR " + getTime() + "] " + msg;
+    // char *ret = strcat("[ERROR ", getTime());
+    // ret = strcat(ret, "] ");
+    // ret = strcat(ret, msg);
+    // return ret;
+    return msg;
 }
 
-std::string DebugError(std::string msg)
+char* DebugFatalError(char *msg)
 {
-    return "[ERROR " + getTime() + "] " + msg;
-}
-
-void DebugFatalError(std::string msg)
-{
-    throw std::runtime_error(getTime() + msg);
+    return msg;
 }

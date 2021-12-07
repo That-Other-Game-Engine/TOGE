@@ -1,3 +1,12 @@
+#pragma once
+
+#include <iostream>
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 #if defined _WIN32 || defined __CYGWIN__
 #ifdef BUILDING_TOGE
 #define TOGE_SHARED __declspec(dllexport)
@@ -12,13 +21,6 @@
 #endif
 #endif
 
-#include <iostream>
-
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-
   /**
    * @brief The function DebugLog is the user accessible function for
    * outputting a debug message to the console
@@ -26,7 +28,7 @@ extern "C"
    * @param msg the message that should be logged
    * @return std::string
    */
-  std::string TOGE_SHARED DebugLog(std::string msg);
+  TOGE_SHARED char* DebugLog(char* msg);
 
   // the below functions are not exposed by default however
   // can be exposed with certain settings(will be configured in the .NET)
@@ -40,7 +42,7 @@ extern "C"
    * @param msg the message to be logged
    * @return std::string
    */
-  std::string TOGE_SHARED DebugWarn(std::string msg);
+   TOGE_SHARED char * DebugWarn(char * msg);
 
   /**
    * @brief DebugError is what will be run when there is an error
@@ -50,7 +52,7 @@ extern "C"
    * @param msg the message to be thrown with the error
    * @return std::string
    */
-  std::string TOGE_SHARED DebugError(std::string msg);
+   TOGE_SHARED char * DebugError(char * msg);
 
   /**
    * @brief A non-user accessible function that will error
@@ -59,7 +61,7 @@ extern "C"
    *
    * @param msg the message that will be thrown
    */
-  void TOGE_SHARED DebugFatalError(std::string msg);
+  TOGE_SHARED char* DebugFatalError(char * msg);
 
 #ifdef __cplusplus
 }

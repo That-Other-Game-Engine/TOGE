@@ -2,6 +2,7 @@ project('toge', 'cpp',
   version : '0.1.0',
   default_options : ['warning_level=3', 'cpp_std=c++2a'])
 
+
 inc = include_directories('include')
 
 thread_dep = dependency('threads')

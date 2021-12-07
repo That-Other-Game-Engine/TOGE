@@ -17,3 +17,5 @@ Todo:
 - [ ] support mipmaps
 - [ ] write a wrapper for the library for another language
     - [ ] Push all of the Logging functions into a single polymorphic function
+
+I hope everyone can enjoy this and maybe even contribute

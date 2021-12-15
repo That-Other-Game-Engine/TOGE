@@ -26,9 +26,9 @@ extern "C"
    * outputting a debug message to the console
    *
    * @param msg the message that should be logged
-   * @return std::string
+   * @return const char*
    */
-  TOGE_SHARED char* DebugLog(char* msg);
+  TOGE_SHARED const char * DebugLog(const char * msg);
 
   // the below functions are not exposed by default however
   // can be exposed with certain settings(will be configured in the .NET)
@@ -40,9 +40,9 @@ extern "C"
    * instead of an info or error
    *
    * @param msg the message to be logged
-   * @return std::string
+   * @return const char*
    */
-   TOGE_SHARED char * DebugWarn(char * msg);
+   TOGE_SHARED const char * DebugWarn(const char * msg);
 
   /**
    * @brief DebugError is what will be run when there is an error
@@ -50,9 +50,9 @@ extern "C"
    * settings
    *
    * @param msg the message to be thrown with the error
-   * @return std::string
+   * @return const char*
    */
-   TOGE_SHARED char * DebugError(char * msg);
+   TOGE_SHARED const char * DebugError(const char * msg);
 
   /**
    * @brief A non-user accessible function that will error
@@ -60,8 +60,9 @@ extern "C"
    * error that cannot be recovered from
    *
    * @param msg the message that will be thrown
+   * @return const char*
    */
-  TOGE_SHARED char* DebugFatalError(char * msg);
+  TOGE_SHARED const char* DebugFatalError(const char * msg);
 
 #ifdef __cplusplus
 }

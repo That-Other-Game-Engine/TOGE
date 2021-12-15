@@ -17,44 +17,24 @@
  */
 
 #include <iostream>
-#include <stdexcept>
-#include <cstring>
-#include <chrono>
-#include <string.h>
 
-#include <memory>
 
-// extern "C" inline const char * getTime()
-// {
-//     return std::chrono::system_clock::now();
-// }
-
-char* DebugLog(char* msg)
+const char* DebugLog(const char* msg)
 {
     return msg;
 }
 
-char * DebugWarn(char * msg)
+const char * DebugWarn(const char * msg)
 {
-    // "[WARN " + getTime() + "] " + msg;
-    // char *ret = strcat("[WARN ", getTime());
-    // ret = strcat(ret, "] ");
-    // ret = strcat(ret, msg);
-    // return ret;
     return msg;
 }
 
-char * DebugError(char *msg)
+const char * DebugError(const char *msg)
 {
-    // "[ERROR " + getTime() + "] " + msg;
-    // char *ret = strcat("[ERROR ", getTime());
-    // ret = strcat(ret, "] ");
-    // ret = strcat(ret, msg);
-    // return ret;
     return msg;
 }
 
-char* DebugFatalError(char *msg)
+const char* DebugFatalError(const char *msg)
 {
     return msg;
 }
